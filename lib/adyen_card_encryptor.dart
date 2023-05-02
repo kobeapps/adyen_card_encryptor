@@ -19,7 +19,11 @@ class AdyenCardEncryptor {
       'cvc': cvc,
       'publicKey': publicKey,
     };
-    final Map encryptedCardData = await _channel.invokeMethod('encryptCardData', cardDataMap);
-    return encryptedCardData;
+    try {
+      final Map encryptedCardData = await _channel.invokeMethod('encryptCardData', cardDataMap);
+      return encryptedCardData;
+    } catch (e) {
+      rethrow;
+    }
   }
 }
