@@ -51,11 +51,11 @@ class AdyenCardEncryptorPlugin: FlutterPlugin, MethodCallHandler {
                             publicKey!!
                         )
 
-                        val encryptedCardData: Map<String, String?> = mapOf(
-                            "encryptedCardNumber" to encryptedCard.encryptedCardNumber,
-                            "encryptedExpiryMonth" to encryptedCard.encryptedExpiryMonth,
-                            "encryptedExpiryYear" to encryptedCard.encryptedExpiryYear,
-                            "encryptedSecurityCode" to encryptedCard.encryptedSecurityCode
+                            val encryptedCardData: Map<String, String?> = mapOf(
+                                "encryptedCardNumber" to encryptedCard.encryptedCardNumber,
+                                "encryptedExpiryMonth" to encryptedCard.encryptedExpiryMonth,
+                                "encryptedExpiryYear" to encryptedCard.encryptedExpiryYear,
+                                "encryptedSecurityCode" to encryptedCard.encryptedSecurityCode
                         )
                         result.success(encryptedCardData)
                     } catch (e: Exception) {
